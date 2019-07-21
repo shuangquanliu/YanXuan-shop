@@ -1,16 +1,16 @@
 <template>
-  <div class="middle">
-      登录成功啊
+  <div>
+      Encumbered
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  
   export default {
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  .middle
-    font-size 0.6rem
-   
+
+ 
 </style>

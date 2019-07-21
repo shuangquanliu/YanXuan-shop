@@ -1,7 +1,5 @@
 <template>
-  <div class="middle">
-      登录成功啊
-  </div>
+
 </template>
 
 <script type="text/ecmascript-6">
@@ -10,7 +8,6 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  .middle
-    font-size 0.6rem
-   
+
+ 
 </style>

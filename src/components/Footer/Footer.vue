@@ -14,7 +14,7 @@
         </a>
       </li>
       <li class="footerItem">
-        <a href="javascript:;" @click="gotoHome('/display')" :class="{active:$route.path === '/display'}">
+        <a href="javascript:;" @click="gotoHome('/display')" :class="{active:$route.path === '/dispaly/discover' || $route.path === '/dispaly/encumbered' }">
           <i class="iconfont icon-tupian"></i>
           <span>识物</span>
         </a>
@@ -61,7 +61,7 @@
     position fixed
     bottom 0
     right 0   
-    z-index 10
+    z-index 20
     .footerList
       display flex  
       align-items center

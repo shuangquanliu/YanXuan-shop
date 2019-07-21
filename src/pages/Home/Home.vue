@@ -11,14 +11,15 @@
         <i class="iconfont icon-sousuo"></i>
       </section>
       <section class="login">
-        <span>登录</span>
+        <span @click="$router.push('/login')">登录</span>
       </section>
     </header>
     <div class="tabwrap">
+      <!-- 横向导航 -->
       <div class="scrollWaper" >
         <ul class="tabList">
-          <li class="tabItem ">
-            <a href="javascript:;" class="active">推荐</a>
+          <li class="tabItem active">
+            <a href="javascript:;" >推荐</a>
           </li>
           <li class="tabItem">
             <a href="javascript:;">居家用品</a>
@@ -46,9 +47,86 @@
           </li>
         </ul>
       </div>
+      <!-- 全部频道 -->
+       <div class="m-indexHd" :class="{withMask:!isShow}">
+        <div class="tableter">
+          全部分类
+        </div>
+        <div class="morecart">
+          <ul class="morecartList">
+            <li>
+              <a>
+                推荐
+              </a>
+            </li>
+             <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+            <li>
+              <a>
+                居家生活
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mask" @click="isShow = false"></div>
+      </div>
       <div class="linear"></div>
-      <div class="toggle">
-        <i class="iconfont icon-sanjiaoxing"></i>
+      <div class="toggle" @click="isShow = !isShow" >
+          <!-- <i class="iconfont icon-sanjiaoxing" :class="upOrDown"></i>    -->
+          <img :class="isShow?'upRotate':'downRotate'" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/arrow-down-3-799ded53ea.png" >
       </div>
     </div>
     <div class="homeScrollWaper">
@@ -335,7 +413,43 @@
             <ul class="m-flashSaleModuleList">
               <li class="m-flashSaleModuleItem">
                 <a href="javascript:;">
-                  <img src="http://yanxuan.nosdn.127.net/2efbc05b5e2b5a19f9a360bf8bbbcdba.png?imageView&thumbnail=216x216&quality=75" alt="">
+                  <img src="http://yanxuan.nosdn.127.net/201e994cc4aed83c113851288700b90b.png?imageView&thumbnail=216x216&quality=75" alt="">
+                  <div class="money">
+                    <span class="newMoney">￥299</span>
+                    <span class="oldMoney">￥400</span>
+                  </div>
+                </a>
+              </li>
+               <li class="m-flashSaleModuleItem">
+                <a href="javascript:;">
+                  <img src="http://yanxuan.nosdn.127.net/201e994cc4aed83c113851288700b90b.png?imageView&thumbnail=216x216&quality=75" alt="">
+                  <div class="money">
+                    <span class="newMoney">￥299</span>
+                    <span class="oldMoney">￥400</span>
+                  </div>
+                </a>
+              </li>
+               <li class="m-flashSaleModuleItem">
+                <a href="javascript:;">
+                  <img src="http://yanxuan.nosdn.127.net/201e994cc4aed83c113851288700b90b.png?imageView&thumbnail=216x216&quality=75" alt="">
+                  <div class="money">
+                    <span class="newMoney">￥299</span>
+                    <span class="oldMoney">￥400</span>
+                  </div>
+                </a>
+              </li>
+               <li class="m-flashSaleModuleItem">
+                <a href="javascript:;">
+                  <img src="http://yanxuan.nosdn.127.net/201e994cc4aed83c113851288700b90b.png?imageView&thumbnail=216x216&quality=75" alt="">
+                  <div class="money">
+                    <span class="newMoney">￥299</span>
+                    <span class="oldMoney">￥400</span>
+                  </div>
+                </a>
+              </li>
+               <li class="m-flashSaleModuleItem">
+                <a href="javascript:;">
+                  <img src="http://yanxuan.nosdn.127.net/201e994cc4aed83c113851288700b90b.png?imageView&thumbnail=216x216&quality=75" alt="">
                   <div class="money">
                     <span class="newMoney">￥299</span>
                     <span class="oldMoney">￥400</span>
@@ -351,39 +465,72 @@
                   </div>
                 </a>
               </li>
-               <li class="m-flashSaleModuleItem">
+            </ul>
+          </div>
+          <!-- 新品首发 -->
+          <div class="m-flashSaleModule">
+            <div class="moduleTitle">
+             <span class="text">新品发布</span>
+             <div class="time1">
+               
+             </div>
+             <div class="more">
+               <span>更多</span>
+               <i class="iconfont icon-more"></i>
+             </div>
+            </div>
+            <ul class="m-flashSaleModuleList">
+              <li class="m-flashSaleModuleItem">
                 <a href="javascript:;">
                   <img src="http://yanxuan.nosdn.127.net/2efbc05b5e2b5a19f9a360bf8bbbcdba.png?imageView&thumbnail=216x216&quality=75" alt="">
-                  <div class="money">
-                    <span class="newMoney">￥299</span>
-                    <span class="oldMoney">￥400</span>
+                  <div class="newItemModule">
+                    <span class="title">大荔枝恶气请问恶趣味请问 阿冬枣</span>
+                    <span class="prive">￥2141</span>
                   </div>
                 </a>
               </li>
                <li class="m-flashSaleModuleItem">
                 <a href="javascript:;">
                   <img src="http://yanxuan.nosdn.127.net/2efbc05b5e2b5a19f9a360bf8bbbcdba.png?imageView&thumbnail=216x216&quality=75" alt="">
-                  <div class="money">
-                    <span class="newMoney">￥299</span>
-                    <span class="oldMoney">￥400</span>
+                  <div class="newItemModule">
+                    <span class="title">恶气请问请问请问请问请问请问e'q</span>
+                    <span class="prive">￥2141</span>
                   </div>
                 </a>
               </li>
                <li class="m-flashSaleModuleItem">
                 <a href="javascript:;">
                   <img src="http://yanxuan.nosdn.127.net/2efbc05b5e2b5a19f9a360bf8bbbcdba.png?imageView&thumbnail=216x216&quality=75" alt="">
-                  <div class="money">
-                    <span class="newMoney">￥299</span>
-                    <span class="oldMoney">￥400</span>
+                  <div class="newItemModule">
+                    <span class="title">请问恶趣味请问请问请问请问恶趣味e'q</span>
+                    <span class="prive">￥2141</span>
                   </div>
                 </a>
               </li>
                <li class="m-flashSaleModuleItem">
                 <a href="javascript:;">
                   <img src="http://yanxuan.nosdn.127.net/2efbc05b5e2b5a19f9a360bf8bbbcdba.png?imageView&thumbnail=216x216&quality=75" alt="">
-                  <div class="money">
-                    <span class="newMoney">￥299</span>
-                    <span class="oldMoney">￥400</span>
+                  <div class="newItemModule">
+                    <span class="title">大荔枝请问恶趣味请问请问阿冬枣</span>
+                    <span class="prive">￥2141</span>
+                  </div>
+                </a>
+              </li>
+               <li class="m-flashSaleModuleItem">
+                <a href="javascript:;">
+                  <img src="http://yanxuan.nosdn.127.net/2efbc05b5e2b5a19f9a360bf8bbbcdba.png?imageView&thumbnail=216x216&quality=75" alt="">
+                  <div class="newItemModule">
+                    <span class="title">大荔枝阿冬请问请问请问请问枣</span>
+                    <span class="prive">￥2141</span>
+                  </div>
+                </a>
+              </li>
+               <li class="m-flashSaleModuleItem">
+                <a href="javascript:;">
+                  <img src="http://yanxuan.nosdn.127.net/201e994cc4aed83c113851288700b90b.png?imageView&thumbnail=216x216&quality=75" alt="">
+                  <div class="newItemModule">
+                    <span class="title">大荔枝阿冬请问人情味请问枣</span>
+                    <span class="prive">￥2141</span>
                   </div>
                 </a>
               </li>
@@ -403,7 +550,8 @@
   export default {
     data () {
       return {
-        
+        isShow:false,//为true全部频道显示 横向导航隐藏
+        // upOrDown:""
       }
     },
     mounted(){
@@ -440,6 +588,9 @@
           click: true,
           
         })
+    },
+    methods:{
+      
     }
   }
 </script>
@@ -470,6 +621,7 @@
           height 52px
           background-color #eee
           border-radius 5px
+          outline-style none
           &::-webkit-input-placeholder
             text-align center
         .iconfont
@@ -511,10 +663,52 @@
             font-size 0.37rem
             position relative
             box-sizing border-box 
+            &.active
+                border-bottom 4px solid $red
             a
               padding 0 10px 5px 10px
-              &.active
-                border-bottom 4px solid $red
+              
+      .m-indexHd
+        width 100%
+        // height 600px
+        background-color white
+        position absolute
+        top 0
+        left 0
+        &.withMask
+          display none
+        .tableter
+          width 100%
+          height 60px
+          line-height 60px
+          // background-color blue
+          padding-left 30px
+          font-size 0.42rem
+          // color white
+        .morecart
+          .morecartList
+            display flex
+            flex-wrap wrap
+            padding-top 24px
+            >li
+              width 148px
+              height 54px
+              line-height 54px
+              border 1px solid #ccc
+              border-radius 10px  
+              margin 0px 0 40px 30px
+              text-align center
+              line-height 54px
+              >a
+                dispaly block
+                width 148px
+                height 54px
+                color black
+        .mask
+          position absolute
+          width 100%
+          height 800px
+          background-color rgba(0,0,0,0.6)
       .linear
         position absolute
         right 150px
@@ -531,9 +725,17 @@
         position absolute
         right 0
         top 0
-        .iconfont
-          font-size 30px  
+        z-index 20
+        img
+          // font-size 30px  
           margin-left 30px
+          transform rotate(0deg)
+          &.upRotate
+            transform rotate(180deg)
+            transition all .5s
+          &.downRotate
+            transform rotate(0deg)
+            transition all .5s
     .homeScrollWaper
       height 1202px
       .homeScrollWaperList
@@ -665,6 +867,7 @@
           .m-flashSaleModule
             width 100%
             background-color white
+            margin-bottom 20px
             .moduleTitle
               width 100%
               height 100px
@@ -684,6 +887,8 @@
                   background-color black
                   color white
                   border-radius 5px
+              .time1
+                width 60%
               .more
                 font-size 0.4rem
                 .iconfont
@@ -707,12 +912,19 @@
                     background-color $bc
                   .money
                     font-size 0.36rem
+                    margin-top 10px
                     .newMoney
                       color $red
                     .oldMoney
                        text-decoration line-through
                        margin-left 15px
-                  
+                  .newItemModule
+                    width 216px
+                    font-size 0.32rem
+                    .title
+                      color black 
+                    .prive
+                      color red
 
 
 
