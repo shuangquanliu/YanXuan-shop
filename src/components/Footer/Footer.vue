@@ -8,13 +8,13 @@
         </a>
       </li>
       <li class="footerItem">
-        <a href="javascript:;"  @click="gotoHome('/category')" :class="{active:$route.path === '/category'}">
+        <a href="javascript:;"  @click="gotoHome('/category')" :class="{active:$route.path === '/category' || $route.path === '/category/categorylist'}">
           <i class="iconfont icon-fenlei"></i>
           <span>分类</span>
         </a>
       </li>
       <li class="footerItem">
-        <a href="javascript:;" @click="gotoHome('/display')" :class="{active:$route.path === '/dispaly/discover' || $route.path === '/dispaly/encumbered' }">
+        <a href="javascript:;" @click="gotoHome('/display')" :class="{active:$route.path === '/dispaly/discover' || $route.path === '/dispaly/encumbered'}">
           <i class="iconfont icon-tupian"></i>
           <span>识物</span>
         </a>
@@ -61,7 +61,7 @@
     position fixed
     bottom 0
     right 0   
-    z-index 20
+    z-index 11
     .footerList
       display flex  
       align-items center

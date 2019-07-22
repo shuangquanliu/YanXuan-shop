@@ -6,8 +6,9 @@ const Profile = ()=> import('../pages/Profile/Profile.vue')
 const Login = ()=>import('../pages/Login/Login.vue')
 // const Encumbered = ()=> import('../pages/Display/Encumbered/Encumbered.vue')
 // const Discover= ()=> import('../pages/Display/Discover/Discover.vue')
-import Discover from '../pages/Display/Discover/Discover.vue'
-import Encumbered from '../pages/Display/Encumbered/Encumbered.vue'
+import DisplayList from '../pages/Display/DisplayList/DisplayList.vue'
+
+import categoryList from '../pages/Category/CategoryList/categoryList.vue'
 export default[
     {
         path:'/home',
@@ -21,7 +22,20 @@ export default[
         component:Category,
         meta:{
             isFooterShow:true
-        }
+        },
+        children:[
+           {
+              path:'/category/categorylist',
+              component:categoryList,
+              meta:{
+                isFooterShow:true
+             }
+           },
+           {
+            path:'/category',
+            redirect:"/category/categorylist"
+          }
+        ]
     },
     {
         path:'/display',
@@ -29,26 +43,16 @@ export default[
         meta:{
             isFooterShow:true
         },
-        children: [
+        children:[
             {
-              path: '/dispaly/discover',
-              component: Discover,
-              meta:{
-                isFooterShow:true
-                }
+                path:'/display/displaylist',
+                component:DisplayList
             },
             {
-              path: '/dispaly/encumbered',
-              component: Encumbered
-            },
-            {
-              path: '',
-              redirect: '/dispaly/discover',
-              meta:{
-                isFooterShow:true
-                }
+               path:'',
+               redirect:'/display/displaylist' 
             }
-          ],
+        ]
         
     },
     {

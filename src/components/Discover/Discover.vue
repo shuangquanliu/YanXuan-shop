@@ -3,20 +3,15 @@
       <div class="scrollWaper">
         <ul class="navList">
         <li v-for="(item,index) in listArr" :key="index" @click="newIndex = index" :class="index===newIndex?'navItem active':'navItem'">
-          <a href="javascript:;">
+          <router-link :to="{path:'/display/displaylist',query:{id:index}}">
             {{item}}
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>
       <div class="scrollWraper1">
         <div class="scrollList">
-          <BigImg/>
-          <SmallImg/>
-          <BigImg/>
-          <SmallImg/>
-          <BigImg/>
-          <SmallImg/>
+         <router-view/>
         </div>
       </div>
   </div>
@@ -24,8 +19,8 @@
 
 <script type="text/ecmascript-6">
  import BScroll from 'better-scroll'
- import BigImg from '../../../components/BigImg/BigImg.vue'
- import SmallImg from '../../../components/SmallImg/SmallImg.vue'
+ import BigImg from '../../components/BigImg/BigImg.vue'
+ import SmallImg from '../../components/SmallImg/SmallImg.vue'
  export default {
     data(){
 
@@ -59,7 +54,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-@import '../../../common/stylus/mixins.styl';
+@import '../../common/stylus/mixins.styl';
 #DiscoverCantainer
   height 100%
   background-color $bc

@@ -7,102 +7,39 @@
     <div class="listWraper">
       <section class="leftWraper" ref="leftWraper">
         <ul class="leftList" ref="leftList">
-          <li class="leftListItem" v-for="(item,index) in listArr" :key="index" :class="index === newIndex?'leftListItem active':'leftListItem'" @click="active(index)">
-            <a href="javascript:;">{{item}}</a>
+          <li class="leftListItem" v-for="(item,index) in categoryData.categoryL1List" :key="index" :class="index === newIndex?'leftListItem active':'leftListItem'" @click="active(index)">
+            <router-link :to="{path:'/category/categorylist',query:{id:item.id}}">{{item.name}}</router-link>
           </li>
         </ul>
       </section>
-      <section class="rightWraper">
-        <div class="rightWraperList">
-          <a href="javascript:;" >
-            <img src="http://yanxuan.nosdn.127.net/ebf42d9334b2e23c009313eb097aadd2.jpg" alt="" class="banner">
-          </a>
-          <ul class="categoryList">
-            <li class="categoryItem">
-              <a href="javascript:;">
-                <div class="categoryImge">
-                  <img src="http://yanxuan.nosdn.127.net/fc87526ae9be33dfa45800567ec735d3.png" alt="" >
-                </div>
-                <span class="title">品质生活</span>
-              </a>
-            </li>
-            <li class="categoryItem">
-              <a href="javascript:;">
-                <div class="categoryImge">
-                  <img src="http://yanxuan.nosdn.127.net/fc87526ae9be33dfa45800567ec735d3.png" alt="" >
-                </div>
-                <span class="title">品质生活</span>
-              </a>
-            </li>
-            <li class="categoryItem">
-              <a href="javascript:;">
-                <div class="categoryImge">
-                  <img src="http://yanxuan.nosdn.127.net/fc87526ae9be33dfa45800567ec735d3.png" alt="" >
-                </div>
-                <span class="title">品质生活</span>
-              </a>
-            </li>
-            <li class="categoryItem">
-              <a href="javascript:;">
-                <div class="categoryImge">
-                  <img src="http://yanxuan.nosdn.127.net/fc87526ae9be33dfa45800567ec735d3.png" alt="" >
-                </div>
-                <span class="title">品质生活</span>
-              </a>
-            </li>
-             <li class="categoryItem">
-              <a href="javascript:;">
-                <div class="categoryImge">
-                  <img src="http://yanxuan.nosdn.127.net/fc87526ae9be33dfa45800567ec735d3.png" alt="" >
-                </div>
-                <span class="title">品质生活</span>
-              </a>
-            </li>
-             <li class="categoryItem">
-              <a href="javascript:;">
-                <div class="categoryImge">
-                  <img src="http://yanxuan.nosdn.127.net/fc87526ae9be33dfa45800567ec735d3.png" alt="" >
-                </div>
-                <span class="title">品质生活</span>
-              </a>
-            </li>
-             <li class="categoryItem">
-              <a href="javascript:;">
-                <div class="categoryImge">
-                  <img src="http://yanxuan.nosdn.127.net/fc87526ae9be33dfa45800567ec735d3.png" alt="" >
-                </div>
-                <span class="title">品质生活</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
-
+  import { mapState } from "vuex";
   export default {
     data () {
       return {
         newIndex:0,
-        listArr:['推荐专区','推荐专区','推荐专区','推荐专区','推荐专区','推荐专区','推荐专区','推荐专区']
       }
     },
-    mounted(){
+    computed: {
+      ...mapState(['categoryData'])
+    },
+    async mounted(){
 
+        await this.$store.dispatch('getCategory')
         //主页竖向滑屏
         const leftWraper = new BScroll('.leftWraper', {
           click: true, 
         })
 
-         //主页竖向滑屏
-        const rightWraper = new BScroll('.rightWraper', {
-          click: true, 
-        })
-        
+   
         // const listWraperHeight =  this.$refs.leftList.clientHeight - 10
         // this.$refs.leftWraper.style.height = listWraperHeight + 'px'
         
@@ -164,37 +101,7 @@
             >a
               display block
               color black
-      .rightWraper
-        height 100%
-        width 100%
-        height 1246px
-        margin-bottom 40px
-        padding .4rem .4rem .28rem
-        .rightWraperList
-          min-height 1334px
-          a
-            display block 
-            width 100%
-            height 192px
-            .banner
-              width 100%
-              height 192px
-          .categoryList
-            margin-top 32px
-            display flex
-            flex-wrap wrap
-            .categoryItem
-              margin-left 30px
-              >a
-                display flex
-                flex-direction column
-                align-items center
-                .categoryImge
-                  height 1.92rem
-                  width 1.92rem
-                  >img 
-                    width 100%
-                    height 100% 
+      
 
           
 </style>

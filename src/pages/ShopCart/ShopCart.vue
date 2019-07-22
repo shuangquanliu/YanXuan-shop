@@ -21,7 +21,7 @@
     <div class="shopCartBottom">
       <img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noCart-d6193bd6e4.png" alt="">
       <span>去买点东西吧</span>
-      <span class="btn">登录</span>
+      <span class="btn" @click="$router.replace('/login')">登录</span>
     </div>
   </section>
 </template>

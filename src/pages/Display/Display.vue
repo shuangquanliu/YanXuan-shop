@@ -3,32 +3,34 @@
     <div class="header border-1px">
       <i class="iconfont icon-shouye" @click="$router.push('/home')"></i>
       <div class="middle">
-        <router-link
-          to="/dispaly/discover"
-          replace
-          :class="{active:$route.path==='/dispaly/discover'}"
-        >发现</router-link>
-        <router-link
-          to="/dispaly/encumbered"
-          replace
-          :class="{active:$route.path==='/dispaly/encumbered'}"
-        >臻选家</router-link>
+        <a @click="isShowDiscover = true" :class="{active:isShowDiscover}">发现</a>
+        <a @click="isShowDiscover = false" :class="{active:!isShowDiscover}">臻选家</a>
       </div>
       <div class="right">
         <i class="iconfont icon-sousuo"></i>
         <i class="iconfont icon-gouwuche"></i>
       </div>
     </div>
-    <router-view />
+    <!-- <router-view /> -->
+    <Discover v-if="isShowDiscover"/>
+    <Encumbered v-if="!isShowDiscover"/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import BScroll from "better-scroll";
+import Discover from '../../components/Discover/Discover.vue'
+import Encumbered from '../../components/Encumbered/Encumbered'
 export default {
   data() {
-    return {};
+    return {
+      isShowDiscover:true,//当为true显示发现 false显示臻选家
+    };
   },
+  components:{
+    Discover,
+    Encumbered
+  }
 };
 </script>
 
