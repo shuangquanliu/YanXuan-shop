@@ -11,7 +11,6 @@ import './mockData/mockerver.js'
 //组件对象可以看到vm实例对象方法:组件对象的原型对象时vm的实例
 
 
-
 new Vue({
   el:'#app',
  /*  components:{

@@ -1,20 +1,26 @@
 <template>
-  <div id="bigImgCantainer">
+  <div id="bigImgCantainer" v-if="big.nickname">
     <div class="header">
-        <img src="https://yanxuan.nosdn.127.net/a714aeeb574585d3e23d35f1ee2db8b8.png?imageView&quality=65&thumbnail=56y56" alt="">
-        <span class="title">选美</span>
+        <img :src="big.avatar" alt="">
+        <span class="title">{{big.nickname}}</span>
     </div>
-    <p class="desc">夏凉用品购置指南，凉席、空调被、凉感四件套每满100立减20</p>
+    <p class="desc">{{big.title}}</p>
     <div class="bottom">   
-        <img src="https://yanxuan.nosdn.127.net/ae09169ca36f7adc57458c5a371ab6df.jpg?imageView&quality=65&thumbnail=690y376" alt="">
+        <img :src="big.picUrl" alt="">
         <i class="iconfont icon-tupian"></i>
-        <span class="count">23332人看过</span>
+        <span class="count">{{big.readCount}}人看过</span>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   export default {
+    props:{
+      big:Object
+    },
+    watch:{
+
+    }
   }
 </script>
 

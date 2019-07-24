@@ -23,11 +23,11 @@
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
   import { mapState } from 'vuex'
+
   export default {
       data () {
           return {
-              category:{},
-              
+              category:{},             
           }
       },
       computed: {

@@ -1,27 +1,33 @@
 <template>
-  <div id="smallCantainer">
+  <div id="smallCantainer" v-if="small.nickname">
     <div class="left">
       <div class="header">
-        <img src="https://yanxuan.nosdn.127.net/a714aeeb574585d3e23d35f1ee2db8b8.png?imageView&quality=65&thumbnail=56y56" alt="">
-        <span class="title">选美</span>
+        <img :src="small.avatar" alt="">
+        <span class="title">{{small.nickname}}</span>
       </div>
       <div class="middle">
-        <p class="detail">夏凉用品购置指南，凉席、空调被请趣味、凉感四件套每满100立减20</p>
-        <span class="desc">鲜榨每日坚果</span>
+        <p class="detail">{{small.title}}</p>
+        <span class="desc">{{small.subTitle}}</span>
       </div>
       <div class="bottom">
         <i class="iconfont icon-tupian"></i>
-        <span class="count">23332人看过</span>
+        <span class="count">{{small.readCount}}人看过</span>
       </div>
     </div> 
     <div class="right">   
-      <img src="https://yanxuan.nosdn.127.net/c0359f2f05aaee841da5dc09bfa23362.jpg?imageView&quality=65&thumbnail=272y272" alt="">        
+      <img :src="small.picUrl" alt="">        
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   export default {
+    props:{
+      small:Object
+    },
+    mounted(){
+      // console.log(this.small)
+    }
   }
 </script>
 
@@ -39,6 +45,8 @@
       justify-content space-around
       .header
         >img 
+          width 54px
+          height 54px
           border-radius 50%
           vertical-align middle
         .title
@@ -56,6 +64,7 @@
           display block
           color #cccccc
           margin 10px 0
+          font-size 0.32rem
       .bottom
         .iconfont
           font-size 30px

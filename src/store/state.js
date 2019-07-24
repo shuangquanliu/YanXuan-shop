@@ -1,5 +1,8 @@
 export default {
     homeData:{},
     categoryData:{},
-    tujian:{}
+    tuijian:{},
+    hotKeyList:{},
+    serchKeyWord:{},
+    list:{}
 }

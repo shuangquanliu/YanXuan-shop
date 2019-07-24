@@ -6,7 +6,7 @@
           <img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt="">
         </a>
       </h1>
-      <section class="search">
+      <section class="search" @click="$router.push('/search')">
         <input type="text" placeholder="搜索商品，共21713款好物品" > 
         <i class="iconfont icon-sousuo"></i>
       </section>

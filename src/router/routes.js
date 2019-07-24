@@ -4,12 +4,21 @@ const Display = ()=> import('../pages/Display/Display.vue')
 const ShopCart = ()=> import('../pages/ShopCart/ShopCart.vue')
 const Profile = ()=> import('../pages/Profile/Profile.vue')
 const Login = ()=>import('../pages/Login/Login.vue')
-// const Encumbered = ()=> import('../pages/Display/Encumbered/Encumbered.vue')
+const Search = ()=> import('../pages/Search/Search.vue')
+const EmailRegister = ()=> import('../pages/EmailRegister/EmailRegister.vue')
 // const Discover= ()=> import('../pages/Display/Discover/Discover.vue')
 import DisplayList from '../pages/Display/DisplayList/DisplayList.vue'
-
+import Expert from '../pages/Expert/Expert.vue'
 import categoryList from '../pages/Category/CategoryList/categoryList.vue'
 export default[
+    {
+        path:'/search',
+        component:Search
+    },
+    {
+        path:'/email',
+        component:EmailRegister
+    },
     {
         path:'/home',
         component:Home,
@@ -46,14 +55,21 @@ export default[
         children:[
             {
                 path:'/display/displaylist',
-                component:DisplayList
+                component:DisplayList,
+                meta:{
+                    isFooterShow:true
+                }
             },
             {
                path:'',
-               redirect:'/display/displaylist' 
+               redirect:'/display/displaylist' ,
             }
         ]
         
+    },
+    {
+        path:'/expert',
+        component:Expert
     },
     {
         path:'/shopcart',

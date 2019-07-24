@@ -14,7 +14,7 @@
         </a>
       </li>
       <li class="footerItem">
-        <a href="javascript:;" @click="gotoHome('/display')" :class="{active:$route.path === '/dispaly/discover' || $route.path === '/dispaly/encumbered'}">
+        <a href="javascript:;" @click="gotoHome('/display/displaylist?id=0')" :class="{active:$route.path === '/display/displaylist' || $route.path === '/expert'}">
           <i class="iconfont icon-tupian"></i>
           <span>识物</span>
         </a>
